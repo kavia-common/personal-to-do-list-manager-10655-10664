@@ -1,0 +1,167 @@
+:root {
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+
+  --font-family-jost: 'Jost', sans-serif;
+  --typo-8-size: 24px;
+  --typo-8-weight: 600;
+  --typo-8-line-height: 34.68px;
+  --typo-8-color: var(--color-ffffff);
+  --typo-11-size: 16px;
+  --typo-11-weight: 400;
+  --typo-11-line-height: 23.12px;
+  --typo-11-color: var(--color-8b8787);
+  --typo-12-size: 20px;
+  --typo-12-weight: 600;
+  --typo-12-line-height: 28.9px;
+  --typo-12-color: var(--color-ffffff);
+
+  --radius-15: 15px;
+  --shadow-0: 0 4px 4px 0 #00000022;
+}
+
+.screen {
+  width: 414px;
+  min-height: 896px;
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.statusBar {
+  width: 429px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  left: -7.5px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+.statusIcons {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+.time {
+  position: absolute;
+  left: 0;
+  top: 23px;
+  padding-left: 12px;
+  font-size: 15px;
+  color: var(--color-8b8787);
+}
+
+/* App Bar */
+.appBar {
+  width: 414px;
+  height: 118px;
+  background: var(--color-9395d3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: var(--radius-15);
+  border-bottom-right-radius: var(--radius-15);
+}
+.backButton {
+  position: absolute;
+  left: 26px;
+  top: 55px;
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--color-ffffff);
+  /* fallback */
+}
+.todoTitle {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.addTaskTitle {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-8-size);
+  font-weight: var(--typo-8-weight);
+  color: var(--typo-8-color);
+  line-height: var(--typo-8-line-height);
+}
+
+/* Input Fields */
+.inputGroup {
+  margin: 30px auto 0 auto;
+  width: 356px;
+  max-width: 92vw;
+}
+.inputLabel {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-11-size);
+  font-weight: var(--typo-11-weight);
+  color: var(--typo-11-color);
+  line-height: var(--typo-11-line-height);
+  margin-bottom: 5px;
+  display: block;
+}
+.inputLine {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-8b8787);
+  padding: 0 0 6px 0;
+  background: transparent;
+  font-size: 18px;
+  color: var(--color-000000);
+  outline: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+.inputLine::placeholder {
+  color: var(--color-8b8787);
+  opacity: .8;
+}
+
+/* Add Button */
+.addBtnBar {
+  margin: 48px auto 0 auto;
+  width: 386px;
+  height: 65px;
+  background: var(--color-9395d3);
+  border-radius: var(--radius-15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-0);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+  border: none;
+}
+.addBtnBar:hover, .addBtnBar:focus {
+  background: var(--color-d6d7ef);
+}
+.addBtnLabel {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-12-size);
+  font-weight: var(--typo-12-weight);
+  line-height: var(--typo-12-line-height);
+  color: var(--typo-12-color);
+}
+
+/* Responsive (min for now) */
+@media (max-width: 420px) {
+  .screen { width: 100vw; }
+  .appBar { width: 100vw; }
+  .addBtnBar { width: 90vw; }
+  .inputGroup { width: 90vw; }
+}
