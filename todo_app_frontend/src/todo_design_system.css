@@ -1,0 +1,22 @@
+:root {
+  --color-ffffff: #ffffff;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+  --btn-bg: var(--color-9395d3);
+  --btn-txt: var(--color-ffffff);
+  --app-bg: var(--color-ffffff);
+}
+.edit-todo-app { background: var(--app-bg); }
+.todo-btn { background: var(--btn-bg); color: var(--btn-txt);}
+.back-btn::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-left: 3px solid var(--color-ffffff);
+  border-bottom: 3px solid var(--color-ffffff);
+  position: absolute;
+  left: 7px; top: 7px;
+  transform: rotate(45deg);
+}
