@@ -1,0 +1,157 @@
+:root {
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+
+  --font-family-jost: 'Jost', sans-serif;
+  --typo-8-size: 24px;      /* AppBar Title */
+  --typo-8-weight: 600;
+  --typo-8-line-height: 34.68px;
+  --typo-8-color: var(--color-ffffff);
+
+  --typo-9-size: 13px;      /* Task Title */
+  --typo-9-weight: 600;
+  --typo-9-line-height: 18.78px;
+  --typo-9-color: var(--color-9395d3);
+
+  --typo-10-size: 10px;     /* Task Subtitle */
+  --typo-10-weight: 400;
+  --typo-10-line-height: 14.45px;
+  --typo-10-color: var(--color-000000);
+
+  --radius-15: 15px;
+  --shadow-0: 0 4px 4px 0 #00000022;
+}
+
+.screen {
+  width: 414px;
+  min-height: 896px;
+  margin: 0 auto;
+  background: var(--color-d6d7ef);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Status Bar */
+.statusBar {
+  width: 429px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  left: -7.5px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+.statusIcons {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+.time {
+  position: absolute;
+  left: 0;
+  top: 23px;
+  padding-left: 12px;
+  font-size: 15px;
+  color: var(--color-8b8787);
+}
+
+/* App Bar */
+.appBar {
+  width: 414px;
+  height: 118px;
+  background: var(--color-9395d3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: var(--radius-15);
+  border-bottom-right-radius: var(--radius-15);
+}
+.backButton {
+  position: absolute;
+  left: 26px;
+  top: 55px;
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--color-ffffff);
+}
+.todoTitle {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.completedTitle {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-8-size);
+  font-weight: var(--typo-8-weight);
+  color: var(--typo-8-color);
+  line-height: var(--typo-8-line-height);
+}
+
+/* Tasks List Area */
+.tasksWrapper {
+  margin-top: 71px; /* AppBar height: 118px + Statusbar 44px - overlap (statusbar is absolute) ~44+118-91 */
+  padding-top: 30px; /* visually align tasks as in Figma above the fold */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Single Completed "TodoBar" Box */
+.todoBar {
+  width: 400px;
+  height: 82px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-15);
+  box-shadow: var(--shadow-0);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.titles {
+  margin-left: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todoMainTitle {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-9-size);
+  font-weight: var(--typo-9-weight);
+  color: var(--typo-9-color);
+  line-height: var(--typo-9-line-height);
+  letter-spacing: 0;
+  margin-top: 3px;
+  margin-bottom: 9px;
+}
+.todoSubtitle {
+  font-family: var(--font-family-jost);
+  font-size: var(--typo-10-size);
+  font-weight: var(--typo-10-weight);
+  color: var(--typo-10-color);
+  line-height: var(--typo-10-line-height);
+  letter-spacing: 0;
+  margin-top: 0;
+}
+
+/* Responsive (min for now) */
+@media (max-width: 420px) {
+  .screen { width: 100vw; }
+  .appBar { width: 100vw; }
+  .todoBar { width: 90vw; }
+}
